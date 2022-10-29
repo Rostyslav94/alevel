@@ -1,0 +1,33 @@
+ublic class Main {
+    public static void main(String[] args) {
+        int a = (int) (Math.random() * 999);
+        int b = (int) (Math.random() * 999);
+        int c = (int) (Math.random() * 999);
+        int p = (a + b + c) / 2;
+        double s = (p*(p - a)*(p - b)*(p - c)) * 0.5;
+        System.out.println(s + " " );
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        int a = (int) (Math.random() * 999);
+        int b = (int) (Math.random() * 999);
+        int c = (int) (Math.random() * 999);
+        int min = a < b ? a : b;
+        min = c < min ? c : min;
+        System.out.println(min + " ");
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        int a = (int) ( Math.random() * 999 );
+        if (a % 2 == 0)
+            System.out.println("Число четное");
+        else
+            System.out.println("Число нечетное");
+    }
+}
