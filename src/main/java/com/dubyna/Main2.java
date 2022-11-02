@@ -1,4 +1,4 @@
 package com.dubyna;
 
-public class Main {
+public class Main2 {
 }
