@@ -1,5 +1,6 @@
 package com.dubyna;
 
 public class MainTwo {
-}
-public
+    public static void main(String[] args) {
+    }
+    }
