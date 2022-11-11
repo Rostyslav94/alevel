@@ -10,7 +10,7 @@ public class Main4 {
 
 
 
-    public static void ex2(String[] args) {
+    public static void ex(String[] args) {
         String str = "Java Exercises";
         String str1 = "Java Exercise";
         System.out.println(str.endsWith("se"));
