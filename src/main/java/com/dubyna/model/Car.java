@@ -1,67 +1,72 @@
 package com.dubyna.model;
 
-public class Car {
+import java.util.Random;
+import java.util.UUID;
 
+public class Car {
+    private final String id;
     private String manufacturer;
-    private String engine;
-    private String color;
+    private Engine engine;
+    private Color color;
     private int count;
     private int price;
 
-    public Car() {
-    }
-
-    public Car(String manufacturer, String engine, String color) {
+    public Car(String manufacturer, Engine engine, Color color) {
         this.manufacturer = manufacturer;
-        this.engine = engine;
         this.color = color;
-        this.count = 1;
-        this.price = (int) (Math.random() * 10001 + 10000);
+        this.engine = engine;
+        count = 1;
+        price = new Random().nextInt(10000, 100000);
+        id = UUID.randomUUID().toString();
     }
 
-    public String getManufacturer() {
-        return manufacturer;
+    public String getId() {
+        return id;
     }
 
     public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
     }
 
-    public String getEngine() {
-        return engine;
+    public String getManufacturer() {
+        return manufacturer;
     }
 
-    public void setEngine(String engine) {
-        this.engine = engine;
+    public void setColor(final Color color) {
+        this.color = color;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(final Engine engine) {
+        this.engine = engine;
+    }
+
+    public void setCount(final int count) {
+        this.count = count;
     }
 
     public int getCount() {
         return count;
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setPrice(final int price) {
+        this.price = price;
     }
 
     public int getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
     @Override
     public String toString() {
-        return String.format("{Manufacturer: %s; Engine: %s; Color: %s; Count %d} price %d$"
-                , getManufacturer(), getEngine(), getColor(), getCount(), getPrice());
+        return String.format("ID: %s, Manufacturer: %s, Engine: %s, %s, Color: %s, Count; %s, Price; %s%n",
+                id, manufacturer, engine.getType(), engine.getPower(), color, count, price);
     }
 }
